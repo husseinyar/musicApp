@@ -1,1 +1,178 @@
-var _0xda4a=["\x6D\x75\x73\x69\x63\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x70\x6C\x61\x79","\x70\x72\x65\x76","\x6E\x65\x78\x74","\x61\x75\x64\x69\x6F","\x70\x72\x6F\x67\x72\x65\x73\x73","\x70\x72\x6F\x67\x72\x65\x73\x73\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x74\x69\x74\x6C\x65","\x63\x6F\x76\x65\x72","\x23\x63\x75\x72\x72\x54\x69\x6D\x65","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x23\x64\x75\x72\x54\x69\x6D\x65","\x66\x61\x72\x61\x68\x4D\x75\x72\x74\x69\x6C\x65","\x73\x68\x61\x61\x64\x69\x79\x6F\x53\x68\x61\x72\x61\x66","\x5A\x41\x4B\x49","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x73\x72\x63","\x6D\x75\x73\x69\x63\x2F","\x2E\x6D\x70\x33","\x69\x6D\x61\x67\x65\x73\x2F","\x2E\x6A\x70\x67","\x61\x64\x64","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x66\x61\x2D\x70\x6C\x61\x79","\x72\x65\x6D\x6F\x76\x65","\x69\x2E\x66\x61\x73","\x66\x61\x2D\x70\x61\x75\x73\x65","\x70\x61\x75\x73\x65","\x6C\x65\x6E\x67\x74\x68","\x73\x72\x63\x45\x6C\x65\x6D\x65\x6E\x74","\x77\x69\x64\x74\x68","\x73\x74\x79\x6C\x65","","\x25","\x63\x6C\x69\x65\x6E\x74\x57\x69\x64\x74\x68","\x6F\x66\x66\x73\x65\x74\x58","\x64\x75\x72\x61\x74\x69\x6F\x6E","\x63\x75\x72\x72\x65\x6E\x74\x54\x69\x6D\x65","\x66\x6C\x6F\x6F\x72","\x30","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x3A","\x63\x6C\x69\x63\x6B","\x63\x6F\x6E\x74\x61\x69\x6E\x73","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x74\x69\x6D\x65\x75\x70\x64\x61\x74\x65","\x65\x6E\x64\x65\x64"];const musicContainer=document[_0xda4a[1]](_0xda4a[0]);const playBtn=document[_0xda4a[1]](_0xda4a[2]);const prevBtn=document[_0xda4a[1]](_0xda4a[3]);const nextBtn=document[_0xda4a[1]](_0xda4a[4]);const audio=document[_0xda4a[1]](_0xda4a[5]);const progress=document[_0xda4a[1]](_0xda4a[6]);const progressContainer=document[_0xda4a[1]](_0xda4a[7]);const title=document[_0xda4a[1]](_0xda4a[8]);const cover=document[_0xda4a[1]](_0xda4a[9]);const currTime=document[_0xda4a[11]](_0xda4a[10]);const durTime=document[_0xda4a[11]](_0xda4a[12]);const songs=[_0xda4a[13],_0xda4a[14],_0xda4a[15]];let songIndex=2;loadSong(songs[songIndex]);function loadSong(_0x9b01xf){title[_0xda4a[16]]= _0x9b01xf;audio[_0xda4a[17]]= `${_0xda4a[18]}${_0x9b01xf}${_0xda4a[19]}`;cover[_0xda4a[17]]= `${_0xda4a[20]}${_0x9b01xf}${_0xda4a[21]}`}function playSong(){musicContainer[_0xda4a[23]][_0xda4a[22]](_0xda4a[2]);playBtn[_0xda4a[11]](_0xda4a[26])[_0xda4a[23]][_0xda4a[25]](_0xda4a[24]);playBtn[_0xda4a[11]](_0xda4a[26])[_0xda4a[23]][_0xda4a[22]](_0xda4a[27]);audio[_0xda4a[2]]()}function pauseSong(){musicContainer[_0xda4a[23]][_0xda4a[25]](_0xda4a[2]);playBtn[_0xda4a[11]](_0xda4a[26])[_0xda4a[23]][_0xda4a[22]](_0xda4a[24]);playBtn[_0xda4a[11]](_0xda4a[26])[_0xda4a[23]][_0xda4a[25]](_0xda4a[27]);audio[_0xda4a[28]]()}function prevSong(){songIndex--;if(songIndex< 0){songIndex= songs[_0xda4a[29]]- 1};loadSong(songs[songIndex]);playSong()}function nextSong(){songIndex++;if(songIndex> songs[_0xda4a[29]]- 1){songIndex= 0};loadSong(songs[songIndex]);playSong()}function updateProgress(_0x9b01x15){const {duration,currentTime}=_0x9b01x15[_0xda4a[30]];const _0x9b01x16=(currentTime/ duration)* 100;progress[_0xda4a[32]][_0xda4a[31]]= `${_0xda4a[33]}${_0x9b01x16}${_0xda4a[34]}`}function setProgress(_0x9b01x15){const _0x9b01x18=this[_0xda4a[35]];const _0x9b01x19=_0x9b01x15[_0xda4a[36]];const _0x9b01x1a=audio[_0xda4a[37]];audio[_0xda4a[38]]= (_0x9b01x19/ _0x9b01x18)* _0x9b01x1a}function DurTime(_0x9b01x15){const {duration,currentTime}=_0x9b01x15[_0xda4a[30]];var _0x9b01x1c;var _0x9b01x1d;let _0x9b01x1e=(currentTime== null)?0:Math[_0xda4a[39]](currentTime/ 60);_0x9b01x1e= _0x9b01x1e< 10?_0xda4a[40]+ _0x9b01x1e:_0x9b01x1e;function _0x9b01x1f(_0x9b01x20){if(Math[_0xda4a[39]](_0x9b01x20)>= 60){for(var _0x9b01x21=1;_0x9b01x21<= 60;_0x9b01x21++){if(Math[_0xda4a[39]](_0x9b01x20)>= (60* _0x9b01x21)&& Math[_0xda4a[39]](_0x9b01x20)< (60* (_0x9b01x21+ 1))){_0x9b01x1c= Math[_0xda4a[39]](_0x9b01x20)- (60* _0x9b01x21);_0x9b01x1c= _0x9b01x1c< 10?_0xda4a[40]+ _0x9b01x1c:_0x9b01x1c}}}else {_0x9b01x1c= Math[_0xda4a[39]](_0x9b01x20);_0x9b01x1c= _0x9b01x1c< 10?_0xda4a[40]+ _0x9b01x1c:_0x9b01x1c}}_0x9b01x1f(currentTime,_0x9b01x1c);currTime[_0xda4a[41]]= _0x9b01x1e+ _0xda4a[42]+ _0x9b01x1c;let _0x9b01x22=(isNaN(duration)=== true)?_0xda4a[40]:Math[_0xda4a[39]](duration/ 60);_0x9b01x22= _0x9b01x22< 10?_0xda4a[40]+ _0x9b01x22:_0x9b01x22;function _0x9b01x23(_0x9b01x20){if(Math[_0xda4a[39]](_0x9b01x20)>= 60){for(var _0x9b01x21=1;_0x9b01x21<= 60;_0x9b01x21++){if(Math[_0xda4a[39]](_0x9b01x20)>= (60* _0x9b01x21)&& Math[_0xda4a[39]](_0x9b01x20)< (60* (_0x9b01x21+ 1))){_0x9b01x1d= Math[_0xda4a[39]](_0x9b01x20)- (60* _0x9b01x21);_0x9b01x1d= _0x9b01x1d< 10?_0xda4a[40]+ _0x9b01x1d:_0x9b01x1d}}}else {_0x9b01x1d= (isNaN(duration)=== true)?_0xda4a[40]:Math[_0xda4a[39]](_0x9b01x20);_0x9b01x1d= _0x9b01x1d< 10?_0xda4a[40]+ _0x9b01x1d:_0x9b01x1d}}_0x9b01x23(duration);durTime[_0xda4a[41]]= _0x9b01x22+ _0xda4a[42]+ _0x9b01x1d}playBtn[_0xda4a[45]](_0xda4a[43],()=>{const _0x9b01x24=musicContainer[_0xda4a[23]][_0xda4a[44]](_0xda4a[2]);if(_0x9b01x24){pauseSong()}else {playSong()}});prevBtn[_0xda4a[45]](_0xda4a[43],prevSong);nextBtn[_0xda4a[45]](_0xda4a[43],nextSong);audio[_0xda4a[45]](_0xda4a[46],updateProgress);progressContainer[_0xda4a[45]](_0xda4a[43],setProgress);audio[_0xda4a[45]](_0xda4a[47],nextSong);audio[_0xda4a[45]](_0xda4a[46],DurTime)
+const musicContainer = document.getElementById('music-container');
+const playBtn = document.getElementById('play');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+const audio = document.getElementById('audio');
+const progress = document.getElementById('progress');
+const progressContainer = document.getElementById('progress-container');
+const title = document.getElementById('title');
+const cover = document.getElementById('cover');
+const currTime = document.querySelector('#currTime');
+const durTime = document.querySelector('#durTime');
+ 
+// Song titles
+const songs = ['farahMurtile', 'shaadiyoSharaf', 'ZAKI'];
+
+// Keep track of song
+let songIndex = 2;
+
+// Initially load song details into DOM
+loadSong(songs[songIndex]);
+
+// Update song details
+function loadSong(song) {
+  title.innerText = song;
+  audio.src = `music/${song}.mp3`;
+  cover.src = `images/${song}.jpg`;
+}
+
+// Play song
+function playSong() {
+  musicContainer.classList.add('play');
+  playBtn.querySelector('i.fas').classList.remove('fa-play');
+  playBtn.querySelector('i.fas').classList.add('fa-pause');
+
+  audio.play();
+}
+
+// Pause song
+function pauseSong() {
+  musicContainer.classList.remove('play');
+  playBtn.querySelector('i.fas').classList.add('fa-play');
+  playBtn.querySelector('i.fas').classList.remove('fa-pause');
+
+  audio.pause();
+}
+
+// Previous song
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Next song
+function nextSong() {
+  songIndex++;
+
+  if (songIndex > songs.length - 1) {
+    songIndex = 0;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
+// Update progress bar
+function updateProgress(e) {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+}
+
+// Set progress bar
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+
+  audio.currentTime = (clickX / width) * duration;
+}
+
+//get duration & currentTime for Time of song
+function DurTime (e) {
+	const {duration,currentTime} = e.srcElement;
+	var sec;
+	var sec_d;
+
+	// define minutes currentTime
+	let min = (currentTime==null)? 0:
+	 Math.floor(currentTime/60);
+	 min = min <10 ? '0'+min:min;
+
+	// define seconds currentTime
+	function get_sec (x) {
+		if(Math.floor(x) >= 60){
+			
+			for (var i = 1; i<=60; i++){
+				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
+					sec = Math.floor(x) - (60*i);
+					sec = sec <10 ? '0'+sec:sec;
+				}
+			}
+		}else{
+		 	sec = Math.floor(x);
+		 	sec = sec <10 ? '0'+sec:sec;
+		 }
+	} 
+
+	get_sec (currentTime,sec);
+     
+	// change currentTime DOM
+	currTime.innerHTML = min +':'+ sec;
+
+	// define minutes duration
+	let min_d = (isNaN(duration) === true)? '0':
+		Math.floor(duration/60);
+	 min_d = min_d <10 ? '0'+min_d:min_d;
+
+
+	 function get_sec_d (x) {
+		if(Math.floor(x) >= 60){
+			
+			for (var i = 1; i<=60; i++){
+				if(Math.floor(x)>=(60*i) && Math.floor(x)<(60*(i+1))) {
+					sec_d = Math.floor(x) - (60*i);
+					sec_d = sec_d <10 ? '0'+sec_d:sec_d;
+				}
+			}
+		}else{
+		 	sec_d = (isNaN(duration) === true)? '0':
+		 	Math.floor(x);
+		 	sec_d = sec_d <10 ? '0'+sec_d:sec_d;
+		 }
+	} 
+
+	// define seconds duration
+	
+	get_sec_d (duration);
+
+	// change duration DOM
+	durTime.innerHTML = min_d +':'+ sec_d;
+		
+};
+
+// Event listeners
+playBtn.addEventListener('click', () => {
+  const isPlaying = musicContainer.classList.contains('play');
+
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+});
+
+// Change song
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+
+// Time/song update
+audio.addEventListener('timeupdate', updateProgress);
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
+
+// Song ends
+audio.addEventListener('ended', nextSong);
+
+// Time of song
+audio.addEventListener('timeupdate',DurTime);
